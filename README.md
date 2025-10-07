@@ -32,3 +32,23 @@ Example animation:
 <p align="center">
   <img width=500 alt="Spear Logo" src="svg/rn-logo-desktop-vector-animated.svg" />
 </p>
+
+
+### Tips and tricks
+
+- Add automatic switching between light and dark mode:
+
+```html
+<style>
+:root {
+    --main-color: #0c0c0c;
+    }
+    @media (prefers-color-scheme: dark) {
+    :root { --main-color: #ffffff; }
+    }
+</style>
+```
+
+> Also, unlike FlashInfer and vLLM that use separate png logos for light and dark mode (150+kb), we can use a single svg in <10kb!
+
+

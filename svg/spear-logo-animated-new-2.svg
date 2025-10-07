@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 145 32" width="145" height="32" role="img" aria-label="SPEAR logo">
+  <defs>
+    <style>
+      :root {
+        --main-color: #0c0c0c;
+        --dur: 4s;
+        --ease: cubic-bezier(.2,.7,.2,1);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root { --main-color: #ffffff; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .square { 
+            animation: none !important; 
+        }
+      }
+      
+      .letter { 
+        fill: var(--main-color); 
+      }
+
+      .square {
+        fill: var(--main-color);
+        transform-box: fill-box;
+        transform-origin: 50% 50%;
+        shape-rendering: geometricPrecision;
+        animation: spear var(--dur) var(--ease) infinite both;
+        will-change: transform;
+        width: 8px;
+        height: 8px;
+        rx: 1.2px;
+        ry: 1.2px;
+      }
+
+      /* Smooth spear formation:
+         0% -> original grid
+         45%..55% -> spear pose (hold)
+         100% -> back to grid
+      */
+      @keyframes spear {
+        0%   { transform: translate(0,0) scale(1); }
+        45%,
+        55%  { transform: translate(calc(var(--tx, 0) * 1px), calc(var(--ty, 0) * 1px)) scale(.7); }
+        100% { transform: translate(0,0) scale(1); }
+      }
+
+      .wordmark {
+        font-family: 'Geist Mono', Arial, monospace;
+        src: url('https://github.com/vercel/geist-font/raw/refs/heads/main/fonts/GeistMono/webfonts/GeistMono-Black.woff2') format('woff2');
+        font-size: 30px;
+        font-weight: 900;
+        fill: var(--main-color);
+      }
+    </style>
+  </defs>
+
+  <!-- Squares: tidy grid baseline (x,y) -->
+  <!-- Left column -->
+  <rect class="square sq-00" x="2"  y="24"  />
+  <rect class="square sq-01" x="2"  y="14" />
+  <rect class="square sq-02" x="2"  y="4"  />
+  <!-- Middle column-->
+  <rect class="square sq-12" x="12" y="4"  />
+  <!-- Right column -->
+  <rect class="square sq-21" x="22" y="14" />
+  <rect class="square sq-20" x="22" y="24" />
+
+  <style>
+    .sq-00 { --tx:    0; --ty: -12;  animation-delay: 0s;    }
+    .sq-01 { --tx:    7; --ty:  -2;  animation-delay: .04s;  }
+    .sq-02 { --tx:   14; --ty:   8;  animation-delay: .20s;  }
+    .sq-12 { --tx:    6; --ty:   1;  animation-delay: .08s;  }
+    .sq-20 { --tx:   -4; --ty:  -5;  animation-delay: .12s;  }
+    .sq-21 { --tx:    1; --ty:  -2;  animation-delay: .16s;  }
+  </style>
+
+  <!-- Wordmark (static) -->
+  <text x="36" y="27" class="wordmark">
+      <tspan class="letter letter-s">S</tspan><tspan class="letter letter-p">P</tspan><tspan class="letter letter-e">E</tspan><tspan class="letter letter-a">A</tspan><tspan class="letter letter-r">R</tspan>
+  </text>
+</svg>

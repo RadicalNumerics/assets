@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="-5 0 152 32">
+  <defs>
+    <style>
+      /* Light mode (default) */
+      :root {
+        --main-color: #c0c0c;
+      }
+      
+      /* Dark mode */
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --main-color: #ffffff;
+        }
+      }
+      
+      .squares, .letter { 
+        fill: var(--main-color); 
+        animation: opacityWave 2s ease-in-out infinite;
+      }
+      
+      .wordmark {
+        font-family: 'Geist Mono', Arial, monospace;
+        src: url('https://github.com/vercel/geist-font/raw/refs/heads/main/fonts/GeistMono/webfonts/GeistMono-Black.woff2') format('woff2');
+        font-size: 30px;
+        font-weight: 900;
+        fill: var(--main-color);
+      }
+      
+      @keyframes opacityWave {
+        0%, 70% {
+          opacity: 1;
+        }
+        80% {
+          opacity: 0.3;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      
+      /* Wave effect delays - top-left to bottom-right */
+      .square-0-2 { animation-delay: 0s; }
+      .square-1-2 { animation-delay: 0.15s; }
+      .square-0-1 { animation-delay: 0.15s; }
+      .square-2-1 { animation-delay: 0.3s; }
+      .square-0-0 { animation-delay: 0.3s; }
+      .square-2-0 { animation-delay: 0.45s; }
+      
+      /* Letter animation delays - continuing the wave */
+      .letter-s { animation-delay: 0.6s; }
+      .letter-p { animation-delay: 0.7s; }
+      .letter-e { animation-delay: 0.8s; }
+      .letter-a { animation-delay: 0.9s; }
+      .letter-r { animation-delay: 1.0s; }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <!-- Squares -->
+    <!-- Coords starting from bottom left (0,0), think of (x,y) as (col,row)-->
+    <!-- (0,0)-->
+    <path class="squares square-0-0" d="M7.39,22.86H1.75c-.97,0-1.75.78-1.75,1.75v5.64c0,.97.78,1.75,1.75,1.75h5.64c.97,0,1.75-.78,1.75-1.75v-5.64c0-.97-.78-1.75-1.75-1.75Z"/>
+    <!-- (2,0) -->
+    <path class="squares square-2-0" d="M30.25,22.86h-5.64c-.97,0-1.75.78-1.75,1.75v5.64c0,.97.78,1.75,1.75,1.75h5.64c.97,0,1.75-.78,1.75-1.75v-5.64c0-.97-.78-1.75-1.75-1.75Z"/>
+    <!-- (0,1) -->
+    <path class="squares square-0-1" d="M7.39,11.43H1.75c-.97,0-1.75.78-1.75,1.75v5.64c0,.97.78,1.75,1.75,1.75h5.64c.97,0,1.75-.78,1.75-1.75v-5.64c0-.97-.78-1.75-1.75-1.75Z"/>
+    <!-- (2,1) -->
+    <path class="squares square-2-1" d="M30.25,11.43h-5.64c-.97,0-1.75.78-1.75,1.75v5.64c0,.97.78,1.75,1.75,1.75h5.64c.97,0,1.75-.78,1.75-1.75v-5.64c0-.97-.78-1.75-1.75-1.75Z"/>
+    <!-- (0,2) -->
+    <path class="squares square-0-2" d="M7.39,0H1.75C.78,0,0,.78,0,1.75v5.64c0,.97.78,1.75,1.75,1.75h5.64c.97,0,1.75-.78,1.75-1.75V1.75c0-.97-.78-1.75-1.75-1.75Z"/>
+    <!-- (1,2) -->
+    <path class="squares square-1-2" d="M18.82,0h-5.64c-.97,0-1.75.78-1.75,1.75v5.64c0,.97.78,1.75,1.75,1.75h5.64c.97,0,1.75-.78,1.75-1.75V1.75c0-.97-.78-1.75-1.75-1.75Z"/>
+
+    <!-- Text -->
+    <text x="40" y="27" class="wordmark">
+      <tspan class="letter letter-s">S</tspan><tspan class="letter letter-p">P</tspan><tspan class="letter letter-e">E</tspan><tspan class="letter letter-a">A</tspan><tspan class="letter letter-r">R</tspan>
+    </text>
+  </g>
+</svg>

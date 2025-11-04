@@ -1,4 +1,4 @@
-# Radical Numerics Assets (WIP)
+# Radical Numerics Assets
 
 
 
@@ -52,3 +52,12 @@ Example animation:
 > Also, unlike FlashInfer and vLLM that use separate png logos for light and dark mode (150+kb), we can use a single svg in <10kb!
 
 
+## Braille⠸⠱
+
+The logo can be roughly reproduced in 2 braille characters -- noting that each braille character is made up of 8 dots in a 4x2 grid and we selectively choose which dots to include. The upright version is any of the following: `⠏⠆`, `⠸⠱`, `⡖⡄` or `⢰⢢` , which can be easily copied and pasted. 
+
+For fancier versions, you can use the `braille_logo.py` for transformations:
+
+```bash
+python scripts/braille_logo.py --frames "⠏⠆" --move DR --rotate 90 # output: ⣒⠆
+```

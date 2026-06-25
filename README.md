@@ -4,6 +4,8 @@
 
 This repository contains the assets (such as svg, png, etc.) for Radical Numerics. 
 
+For figures, charts, and brand-consistent visuals, see the [Style Guide](./STYLE_GUIDE.md) (palette, typography, themes, matplotlib starter).
+
 
 ## SVGs
 
